@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Tools Analysis — Valeria Cabrera</title>
+    <link rel="stylesheet" href="assets\css\site.css">
+</head>
+<body id="top">
+    <header>
+        <h1>Web Design Tools Analysis</h1>
+        <p>Student: <strong>Valeria Cabrera</strong> · Course: <strong>Advanced Web Design</strong> · Professor: <strong>Rubén Vega Balbás</strong></p>
+        <nav>
+            <a href="#frameworks">CSS Frameworks</a>
+            <a href="#generators">Static Generators</a>
+            <a href="#ui-libraries">UI Libraries</a>
+            <a href="#animations">Animations</a>
+            <a href="#builders">Page Builders</a>
+            <a href="#comparison">Comparison</a>
+            <a href="#personal-notes">My Analysis</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- CSS Frameworks Section -->
+        <section id="frameworks">
+            <h2>CSS Frameworks</h2>
+            <p class="category-intro">
+                CSS frameworks provide pre-written CSS code that helps speed up development and ensure consistency across projects. They offer ready-made components and utility classes.
+            </p>
+            
+            <div class="tool-grid">
+                <article class="tool-card">
+                    <h3><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/bootstrap-showcase.png?updatedAt=1758535011796" 
+                             alt="Bootstrap component showcase" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Bootstrap's extensive component library in action</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-easy">Beginner Friendly</span>
+                        <span class="meta-tag">Component-Based</span>
+                        <span class="meta-tag">Mobile-First</span>
+                    </div>
+                    <p>
+                        The world's most popular framework. Offers a comprehensive component library with JavaScript plugins included. Perfect for rapid prototyping and consistent design.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Extensive documentation</li>
+                                <li>Large community support</li>
+                                <li>Quick prototyping</li>
+                                <li>Browser compatibility</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Generic Bootstrap look</li>
+                                <li>Heavy file size</li>
+                                <li>Override difficulties</li>
+                                <li>jQuery dependency (v4)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/tailwind-utilities.png?updatedAt=1758535011795" 
+                             alt="Tailwind CSS utilities demonstration" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Utility-first approach for custom designs</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">Utility-First</span>
+                        <span class="meta-tag">Customizable</span>
+                    </div>
+                    <p>
+                        A utility-first CSS framework that provides low-level utility classes to build custom designs without leaving HTML. No pre-built components, pure flexibility.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Highly customizable</li>
+                                <li>No opinionated styles</li>
+                                <li>Small production builds</li>
+                                <li>Consistent spacing</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Verbose HTML</li>
+                                <li>Learning curve</li>
+                                <li>Requires build process</li>
+                                <li>No components</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://bulma.io/" target="_blank">Bulma</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/bulma-framework.png?updatedAt=1758535011765" 
+                             alt="Bulma framework showcase" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Modern CSS framework based on Flexbox</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-easy">Beginner Friendly</span>
+                        <span class="meta-tag">CSS-Only</span>
+                        <span class="meta-tag">Flexbox-Based</span>
+                    </div>
+                    <p>
+                        A modern CSS framework based on Flexbox. Pure CSS with no JavaScript dependencies, making it lightweight and easy to customize.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>No JS required</li>
+                                <li>Clean syntax</li>
+                                <li>Modern design</li>
+                                <li>Modular imports</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>No JS components</li>
+                                <li>Less features</li>
+                                <li>Smaller community</li>
+                                <li>IE11 issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Static Site Generators Section -->
+        <section id="generators">
+            <h2>Static Site Generators</h2>
+            <p class="category-intro">
+                Tools that generate static HTML websites from templates and content files. Perfect for performance, security, and easy deployment.
+            </p>
+            
+            <div class="tool-grid">
+                <article class="tool-card">
+                    <h3><a href="https://jekyllrb.com/" target="_blank">Jekyll</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/jekyll-static.jpg" 
+                             alt="Jekyll static site generator" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Transform plain text into static websites</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">Ruby-Based</span>
+                        <span class="meta-tag">GitHub Pages</span>
+                    </div>
+                    <p>
+                        Transform plain text into static websites and blogs. Native support for GitHub Pages hosting makes it perfect for documentation and personal sites.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>GitHub Pages integration</li>
+                                <li>Great for blogs</li>
+                                <li>Liquid templating</li>
+                                <li>Free hosting</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Ruby dependency</li>
+                                <li>Slower builds</li>
+                                <li>Limited plugins on GH</li>
+                                <li>Learning curve</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://gohugo.io/" target="_blank">Hugo</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/hugo-fast.jpg" 
+                             alt="Hugo static site generator" 
+                             width="640" 
+                             height="360">
+                        <figcaption>The world's fastest framework for building websites</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">Go-Based</span>
+                        <span class="meta-tag">Fast Builds</span>
+                    </div>
+                    <p>
+                        Written in Go with incredible build speeds. Perfect for large sites with thousands of pages that need quick regeneration.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Lightning fast builds</li>
+                                <li>No dependencies</li>
+                                <li>Rich features</li>
+                                <li>Live reload</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Go templates</li>
+                                <li>Less themes</li>
+                                <li>Complex config</li>
+                                <li>Documentation gaps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://www.gatsbyjs.com/" target="_blank">Gatsby</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/gatsby-react.jpg" 
+                             alt="Gatsby React-based generator" 
+                             width="640" 
+                             height="360">
+                        <figcaption>React-based framework for blazing-fast websites</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-hard">Advanced</span>
+                        <span class="meta-tag">React-Based</span>
+                        <span class="meta-tag">GraphQL</span>
+                    </div>
+                    <p>
+                        A React-based framework that helps developers build blazing-fast websites with modern web technologies and progressive web app features.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>React ecosystem</li>
+                                <li>PWA ready</li>
+                                <li>Rich plugins</li>
+                                <li>Image optimization</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Steep learning</li>
+                                <li>Build complexity</li>
+                                <li>Overkill for simple</li>
+                                <li>GraphQL required</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- UI Component Libraries Section -->
+        <section id="ui-libraries">
+            <h2>UI Component Libraries</h2>
+            <p class="category-intro">
+                Pre-built component libraries that provide ready-to-use UI elements. Most are framework-specific and offer complete design systems.
+            </p>
+            
+            <div class="tool-grid">
+                <article class="tool-card">
+                    <h3><a href="https://mui.com/" target="_blank">Material-UI</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/material-ui.jpg" 
+                             alt="Material-UI React components" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Google's Material Design for React applications</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">React</span>
+                        <span class="meta-tag">Material Design</span>
+                    </div>
+                    <p>
+                        React components implementing Google's Material Design. Comprehensive theming system with accessibility built-in.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Complete components</li>
+                                <li>Theming system</li>
+                                <li>Accessibility</li>
+                                <li>TypeScript support</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>React only</li>
+                                <li>Large bundle</li>
+                                <li>Material look</li>
+                                <li>Complex API</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://ant.design/" target="_blank">Ant Design</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/ant-design.jpg" 
+                             alt="Ant Design components" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Enterprise-level design language and components</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">React</span>
+                        <span class="meta-tag">Enterprise</span>
+                    </div>
+                    <p>
+                        A design language for enterprise-level products. Provides high-quality React components with excellent form handling.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Enterprise ready</li>
+                                <li>Form handling</li>
+                                <li>Data tables</li>
+                                <li>Complete system</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Chinese docs</li>
+                                <li>Opinionated</li>
+                                <li>Learning curve</li>
+                                <li>Large size</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://chakra-ui.com/" target="_blank">Chakra UI</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/chakra-ui.jpg" 
+                             alt="Chakra UI components" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Simple, modular and accessible component library</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-easy">Beginner Friendly</span>
+                        <span class="meta-tag">React</span>
+                        <span class="meta-tag">Accessible</span>
+                    </div>
+                    <p>
+                        Modular and accessible components following WAI-ARIA standards. Built-in dark mode and excellent developer experience.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Accessibility first</li>
+                                <li>Dark mode</li>
+                                <li>Composable</li>
+                                <li>Great DX</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>React only</li>
+                                <li>Smaller ecosystem</li>
+                                <li>Basic components</li>
+                                <li>Performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Animation Libraries Section -->
+        <section id="animations">
+            <h2>Animation Libraries</h2>
+            <p class="category-intro">
+                JavaScript and CSS libraries for creating smooth animations and interactive experiences on the web.
+            </p>
+            
+            <div class="tool-grid">
+                <article class="tool-card">
+                    <h3><a href="https://greensock.com/" target="_blank">GSAP</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/gsap-animation.jpg" 
+                             alt="GSAP animation library" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Professional-grade JavaScript animation library</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-hard">Advanced</span>
+                        <span class="meta-tag">Professional</span>
+                        <span class="meta-tag">Performance</span>
+                    </div>
+                    <p>
+                        Industry-standard animation library used by major brands. Incredible performance with timeline control and advanced effects.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Industry standard</li>
+                                <li>Best performance</li>
+                                <li>Timeline control</li>
+                                <li>Plugin ecosystem</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Paid plugins</li>
+                                <li>Steep learning</li>
+                                <li>Overkill for simple</li>
+                                <li>License costs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://animate.style/" target="_blank">Animate.css</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/animate-css.jpg" 
+                             alt="Animate.css animations" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Just-add-water CSS animations library</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-easy">Beginner Friendly</span>
+                        <span class="meta-tag">CSS-Only</span>
+                        <span class="meta-tag">Drop-in</span>
+                    </div>
+                    <p>
+                        Cross-browser library of CSS animations. As easy as adding a class name to get professional animations.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>No JavaScript</li>
+                                <li>Easy to use</li>
+                                <li>Works everywhere</li>
+                                <li>Small size</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Limited control</li>
+                                <li>No timeline</li>
+                                <li>Basic only</li>
+                                <li>No chaining</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://www.framer.com/motion/" target="_blank">Framer Motion</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/framer-motion.jpg" 
+                             alt="Framer Motion for React" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Production-ready motion library for React</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">React</span>
+                        <span class="meta-tag">Declarative</span>
+                    </div>
+                    <p>
+                        Declarative animations for React with gesture support and spring physics. Simple syntax with powerful capabilities.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>React integration</li>
+                                <li>Gesture support</li>
+                                <li>Spring physics</li>
+                                <li>Simple API</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>React only</li>
+                                <li>Bundle size</li>
+                                <li>Performance cost</li>
+                                <li>Learning curve</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Page Builders Section -->
+        <section id="builders">
+            <h2>Visual Page Builders</h2>
+            <p class="category-intro">
+                No-code/low-code tools that allow visual website creation. Perfect for designers and rapid prototyping.
+            </p>
+            
+            <div class="tool-grid">
+                <article class="tool-card">
+                    <h3><a href="https://webflow.com/" target="_blank">Webflow</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/webflow-visual.jpg" 
+                             alt="Webflow visual builder" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Professional web design tool with clean code output</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">Visual Design</span>
+                        <span class="meta-tag">CMS</span>
+                    </div>
+                    <p>
+                        Visual design tool that generates clean, semantic code. Built-in CMS and hosting with advanced interactions.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Clean code</li>
+                                <li>CMS built-in</li>
+                                <li>Interactions</li>
+                                <li>Hosting included</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Expensive</li>
+                                <li>Learning curve</li>
+                                <li>Vendor lock-in</li>
+                                <li>Limited logic</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://wordpress.org/plugins/elementor/" target="_blank">Elementor</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/elementor-wordpress.jpg" 
+                             alt="Elementor page builder" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Leading WordPress page builder plugin</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-easy">Beginner Friendly</span>
+                        <span class="meta-tag">WordPress</span>
+                        <span class="meta-tag">Drag & Drop</span>
+                    </div>
+                    <p>
+                        WordPress page builder with live editing. Extensive widget library and template marketplace.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Easy to use</li>
+                                <li>WP integration</li>
+                                <li>Templates</li>
+                                <li>Large community</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>WordPress only</li>
+                                <li>Performance</li>
+                                <li>Bloated code</li>
+                                <li>Plugin conflicts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <h3><a href="https://www.framer.com/" target="_blank">Framer</a></h3>
+                    <figure>
+                        <img src="https://ik.imagekit.io/YOUR_IMAGEKIT_ID/web-tools/framer-interactive.jpg" 
+                             alt="Framer design tool" 
+                             width="640" 
+                             height="360">
+                        <figcaption>Design and publish stunning interactive sites</figcaption>
+                    </figure>
+                    <div class="tool-meta">
+                        <span class="meta-tag difficulty-medium">Intermediate</span>
+                        <span class="meta-tag">React-Based</span>
+                        <span class="meta-tag">Interactive</span>
+                    </div>
+                    <p>
+                        Modern design tool with powerful scroll effects and interactions. Real-time collaboration and React components.
+                    </p>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>Pros</h4>
+                            <ul>
+                                <li>Amazing effects</li>
+                                <li>React components</li>
+                                <li>Collaboration</li>
+                                <li>Modern output</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h4>Cons</h4>
+                            <ul>
+                                <li>Subscription</li>
+                                <li>Limited CMS</li>
+                                <li>Performance</li>
+                                <li>Learning curve</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section id="comparison">
+            <h2>Tool Comparison Matrix</h2>
+            <p class="category-intro">
+                Comprehensive comparison of all tools based on key decision-making criteria.
+            </p>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Learning Curve</th>
+                            <th>Performance</th>
+                            <th>Community</th>
+                            <th>Cost</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Bootstrap</strong></td>
+                            <td><span class="meta-tag difficulty-easy">Easy</span></td>
+                            <td><span class="star">⭐⭐⭐</span></td>
+                            <td><span class="star">⭐⭐⭐⭐⭐</span></td>
+                            <td>Free</td>
+                            <td>Quick prototypes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tailwind CSS</strong></td>
+                            <td><span class="meta-tag difficulty-medium">Medium</span></td>
+                            <td><span class="star">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="star">⭐⭐⭐⭐</span></td>
+                            <td>Free</td>
+                            <td>Custom designs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jekyll</strong></td>
+                            <td><span class="meta-tag difficulty-medium">Medium</span></td>
+                            <td><span class="star">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="star">⭐⭐⭐⭐</span></td>
+                            <td>Free</td>
+                            <td>Blogs & docs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Material-UI</strong></td>
+                            <td><span class="meta-tag difficulty-medium">Medium</span></td>
+                            <td><span class="star">⭐⭐⭐</span></td>
+                            <td><span class="star">⭐⭐⭐⭐</span></td>
+                            <td>Free/$</td>
+                            <td>React apps</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GSAP</strong></td>
+                            <td><span class="meta-tag difficulty-hard">Hard</span></td>
+                            <td><span class="star">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="star">⭐⭐⭐⭐</span></td>
+                            <td>Free/$</td>
+                            <td>Complex animations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Webflow</strong></td>
+                            <td><span class="meta-tag difficulty-medium">Medium</span></td>
+                            <td><span class="star">⭐⭐⭐⭐</span></td>
+                            <td><span class="star">⭐⭐⭐</span></td>
+                            <td>$</td>
+                            <td>Professional sites</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Personal Analysis Section -->
+        <section id="personal-notes">
+            <h2>Personal Notes & Critical Analysis</h2>
+            
+            <div class="analysis-grid">
+                <article class="analysis-card">
+                    <h3>🤔 Which tools fit my portfolio?</h3>
+                    <p>
+                        After exploring these tools, I believe Jekyll + Tailwind CSS would be perfect for my portfolio. 
+                        Jekyll gives me the static site benefits with GitHub Pages hosting, while Tailwind provides 
+                        the flexibility to create unique designs without fighting against pre-built components.
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <h3>⚖️ Key Trade-offs Observed</h3>
+                    <p>
+                        <strong>Speed vs. Clarity:</strong> Tailwind makes development faster but HTML becomes verbose.<br>
+                        <strong>Convention vs. Creativity:</strong> Bootstrap is quick but looks generic.<br>
+                        <strong>Features vs. Performance:</strong> More features mean larger bundle sizes.<br>
+                        <strong>Visual vs. Code:</strong> Page builders are fast but limit control.
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <h3>💡 Important Insights</h3>
+                    <p>
+                        No single tool is perfect for everything. The modern web is moving towards component-based 
+                        architectures, utility-first CSS, and static generation. Understanding the fundamentals is 
+                        more important than mastering any specific tool.
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <h3>🚀 My Implementation Plan</h3>
+                    <p>
+                        <strong>Phase 1:</strong> Master HTML/CSS fundamentals<br>
+                        <strong>Phase 2:</strong> Learn Jekyll for static generation<br>
+                        <strong>Phase 3:</strong> Add Tailwind for styling<br>
+                        <strong>Phase 4:</strong> Integrate GSAP for key animations<br>
+                        <strong>Phase 5:</strong> Deploy on GitHub Pages
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <h3>🎯 ATELIER Method Applied</h3>
+                    <p>
+                        <strong>Observe:</strong> Each tool solves specific problems but creates new ones.<br>
+                        <strong>Intervene:</strong> Testing tools hands-on revealed hidden complexities.<br>
+                        <strong>Reflect:</strong> The best tool depends entirely on project context.<br>
+                        <strong>Share:</strong> This analysis helps others make informed decisions.
+                    </p>
+                </article>
+
+                <article class="analysis-card">
+                    <h3>📈 Future Trends</h3>
+                    <p>
+                        The web is moving towards edge computing, AI-assisted development, and component-driven design. 
+                        Tools that embrace these paradigms while maintaining simplicity will dominate. 
+                        Static sites are making a comeback due to performance and security benefits.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 — Web Atelier UDIT · All external links belong to their respective owners.</p>
+        <p>Created by <strong>Valeria Cabrera</strong> for Advanced Web Design Course</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#top" id="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <script>
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = document.querySelector('.lightbox-close');
+
+        // Add click handlers to all figure images
+        document.querySelectorAll('figure img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function() {
+                lightbox.style.display = 'block';
+                // Use the same image but with larger dimensions from ImageKit
+                // Remove any existing transformations and add new ones for full size
+                let fullSizeUrl = this.src;
+                if (fullSizeUrl.includes('ik.imagekit.io')) {
+                    // If URL already has transformations, remove them
+                    fullSizeUrl = fullSizeUrl.replace(/\/tr:[^\/]*/, '');
+                    // Add transformation for larger size (optional - ImageKit will serve original if no transform)
+                    // You can adjust or remove this transformation as needed
+                    fullSizeUrl = fullSizeUrl.replace('ik.imagekit.io/YOUR_IMAGEKIT_ID', 'ik.imagekit.io/YOUR_IMAGEKIT_ID/tr:w-1200');
+                }
+                lightboxImg.src = fullSizeUrl;
+                lightboxCaption.innerHTML = this.alt;
+            });
+        });
+
+        // Close lightbox when clicking X
+        lightboxClose.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
