@@ -14,7 +14,7 @@
 /* Custom Properties for Consistent Design */
 :root {
     --primary-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-    --secondary-gradient: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
+    --secondary-gradient: linear-gradient(135deg, #ff9f9f 0%, #f36868 100%);
     --success-gradient: linear-gradient(135deg, #ffa726 0%, #ff7043 100%);
     --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     --glass-bg: rgba(255, 255, 255, 0.9);
