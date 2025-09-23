@@ -4,73 +4,96 @@
    Course: Advanced Web Design - Web Atelier UDIT
    ========================================================================== */
 
-/* CSS Reset & Base Styles */
+/* ==========================================================================
+   1. CSS RESET & VARIABLES
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Custom Properties for Consistent Design */
 :root {
+    /* Color Gradients */
     --primary-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
     --secondary-gradient: linear-gradient(135deg, #ff9f9f 0%, #f36868 100%);
     --success-gradient: linear-gradient(135deg, #ffa726 0%, #ff7043 100%);
     --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    
+    /* Glass Effects */
     --glass-bg: rgba(255, 255, 255, 0.9);
     --glass-border: rgba(255, 107, 107, 0.2);
+    
+    /* Shadows */
     --shadow-light: 0 8px 32px rgba(255, 107, 107, 0.15);
     --shadow-dark: 0 8px 32px rgba(238, 90, 36, 0.25);
+    
+    /* Design System */
     --border-radius: 16px;
     --animation-speed: 0.3s;
-    --text-primary: #2d3748;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
+    
+    /* Typography Colors - Fixed to use dark grey instead of blue */
+    --text-primary: #374151;      /* Dark grey instead of blue */
+    --text-secondary: #6b7280;    /* Medium grey */
+    --text-muted: #9ca3af;        /* Light grey */
 }
 
-/* Typography & Base Layout */
+/* ==========================================================================
+   2. BASE TYPOGRAPHY & LAYOUT
+   ========================================================================== */
+
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
     color: var(--text-primary);
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #ffa726 100%);
-    background-attachment: fixed;
+    background: #ffffff;
     min-height: 100vh;
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header Styles with Animated Background */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   3. HEADER STYLES
+   ========================================================================== */
+
 header {
-    background: var(--primary-gradient);
-    color: white;
+    background: #ffffff;
+    color: var(--text-primary);
     padding: 3rem 2rem;
     border-radius: var(--border-radius);
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-dark);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 header h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 0.8rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     letter-spacing: -0.02em;
 }
 
 header p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    opacity: 0.95;
+    color: var(--text-secondary);
     font-weight: 300;
     text-align: center;
 }
 
-/* Modern Navigation Pills */
+/* ==========================================================================
+   4. NAVIGATION 
+   ========================================================================== */
+
 nav {
     margin-top: 1.5rem;
     display: flex;
@@ -80,13 +103,12 @@ nav {
 }
 
 nav a {
-    color: #ff6b6b;
+    color: var(--text-primary);
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 107, 107, 0.3);
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
     transition: all var(--animation-speed) cubic-bezier(0.4, 0, 0.2, 1);
     font-weight: 500;
     white-space: nowrap;
@@ -94,12 +116,16 @@ nav a {
 
 nav a:hover {
     color: white;
-    background: rgba(255, 107, 107, 0.9);
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
+    background: var(--primary-gradient);
 }
 
-/* Main Content with Glassmorphism */
+/* ==========================================================================
+   5. MAIN CONTENT
+   ========================================================================== */
+
 main {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
@@ -110,7 +136,10 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-/* Modern Section Styles */
+/* ==========================================================================
+   6. SECTION STYLES
+   ========================================================================== */
+
 section {
     margin-bottom: 4rem;
     padding-bottom: 3rem;
@@ -169,7 +198,10 @@ section h2::before {
     line-height: 1.8;
 }
 
-/* Tool Grid Layout */
+/* ==========================================================================
+   7. GRID LAYOUTS
+   ========================================================================== */
+
 .tool-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -177,7 +209,16 @@ section h2::before {
     margin-bottom: 2rem;
 }
 
-/* Enhanced Article Cards */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* ==========================================================================
+   8. CARD STYLES
+   ========================================================================== */
+
 article, .tool-card {
     background: #ffffff;
     border-radius: var(--border-radius);
@@ -188,6 +229,7 @@ article, .tool-card {
     overflow: hidden;
     transition: all var(--animation-speed) cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 20px rgba(238, 90, 36, 0.08);
+    animation: fadeInUp 0.6s ease-out;
 }
 
 article::before, .tool-card::before {
@@ -246,7 +288,20 @@ article h3 a:hover::after, .tool-card h3 a:hover::after {
     width: 100%;
 }
 
-/* Modern Figure and Image Styles */
+.analysis-card {
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.analysis-card h3::before {
+    display: none;
+}
+
+/* ==========================================================================
+   9. IMAGES & FIGURES
+   ========================================================================== */
+
 figure {
     margin: 2rem 0;
     text-align: center;
@@ -262,6 +317,8 @@ figure img {
     border-radius: var(--border-radius);
     transition: transform var(--animation-speed) cubic-bezier(0.4, 0, 0.2, 1);
     filter: brightness(1.05) saturate(1.1);
+    cursor: pointer;
+    position: relative;
 }
 
 figure:hover img {
@@ -280,7 +337,10 @@ figcaption {
     border: 1px solid rgba(255, 107, 107, 0.1);
 }
 
-/* Tool Meta Tags */
+/* ==========================================================================
+   10. META TAGS & LABELS
+   ========================================================================== */
+
 .tool-meta {
     display: flex;
     flex-wrap: wrap;
@@ -290,31 +350,44 @@ figcaption {
 
 .meta-tag {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(255, 107, 107, 0.1);
+    padding: 0.35rem 0.9rem;
     border-radius: 20px;
-    font-size: 0.85rem;
-    color: #ee5a24;
-    border: 1px solid rgba(255, 107, 107, 0.2);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid;
+    transition: all 0.2s ease;
 }
 
-.meta-tag.difficulty-easy { 
-    background: rgba(16, 185, 129, 0.1); 
+/* Learning curve indicators */
+.meta-tag.tag-learning {
+    background: rgba(147, 51, 234, 0.08);
+    color: #7c3aed;
+    border-color: rgba(147, 51, 234, 0.2);
+}
+
+/* Tool type indicators */
+.meta-tag.tag-type {
+    background: rgba(59, 130, 246, 0.08);
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Approach/methodology indicators */
+.meta-tag.tag-approach {
+    background: rgba(16, 185, 129, 0.08);
     color: #10b981;
     border-color: rgba(16, 185, 129, 0.2);
 }
-.meta-tag.difficulty-medium { 
-    background: rgba(251, 146, 60, 0.1); 
-    color: #fb923c;
-    border-color: rgba(251, 146, 60, 0.2);
-}
-.meta-tag.difficulty-hard { 
-    background: rgba(239, 68, 68, 0.1); 
-    color: #ef4444;
-    border-color: rgba(239, 68, 68, 0.2);
+
+.meta-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Pros and Cons Lists */
+/* ==========================================================================
+   11. PROS & CONS LISTS
+   ========================================================================== */
+
 .pros-cons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -367,7 +440,10 @@ figcaption {
     font-weight: bold;
 }
 
-/* Enhanced Typography */
+/* ==========================================================================
+   12. TYPOGRAPHY
+   ========================================================================== */
+
 p {
     margin-bottom: 1.5rem;
     text-align: left;
@@ -384,10 +460,18 @@ p strong {
     border-radius: 4px;
 }
 
-/* Comparison Table */
+/* ==========================================================================
+   13. TABLES
+   ========================================================================== */
+
 .comparison-table {
     overflow-x: auto;
     margin: 2rem 0;
+}
+
+.comparison-table .meta-tag {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
 }
 
 table {
@@ -416,11 +500,16 @@ tbody tr:hover {
 
 .star {
     color: #fbbf24;
+    font-size: 0.9em;
+    letter-spacing: 2px;
 }
 
-/* Special Personal Notes Section */
+/* ==========================================================================
+   14. PERSONAL NOTES SECTION
+   ========================================================================== */
+
 #personal-notes {
-    background: var(--success-gradient);
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
     border-radius: var(--border-radius);
     padding: 3rem;
     position: relative;
@@ -428,65 +517,49 @@ tbody tr:hover {
 }
 
 #personal-notes::before {
-    content: '🔥';
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 3rem;
-    opacity: 0.3;
+    display: none;
 }
 
 #personal-notes h2 {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2.5rem;
 }
 
-#personal-notes article, .analysis-card {
-    background: rgba(255, 255, 255, 0.97);
+#personal-notes .analysis-card {
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px rgba(238, 90, 36, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-#personal-notes article::before {
-    background: var(--secondary-gradient);
+#personal-notes .analysis-card::before {
+    display: none;
 }
 
-#personal-notes h3 {
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.analysis-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.analysis-card {
-    border-radius: 15px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.analysis-card h3 {
-    margin-bottom: 1rem;
+#personal-notes .analysis-card h3 {
+    color: #ef4444;
     font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    background: none;
+    -webkit-text-fill-color: initial;
 }
 
-/* Modern Footer */
+/* ==========================================================================
+   15. FOOTER 
+   ========================================================================== */
+
 footer {
-    background: var(--dark-gradient);
-    color: white;
+    background:  #e5e7eb 
+    color: #e5e7eb 
     text-align: center;
     padding: 2.5rem;
     border-radius: var(--border-radius);
     margin-top: 3rem;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-dark);
+    box-shadow: 0 8px 32px rgba(31, 41, 55, 0.25);
 }
 
 footer::before {
@@ -501,22 +574,26 @@ footer::before {
 
 footer p {
     margin-bottom: 0.8rem;
-    color: #cbd5e0;
+    color: var(--text-secondary);
     font-weight: 300;
     text-align: center;
 }
 
 footer strong {
-    color: white;
+    color: var(--text-primary)
+#374151;
     font-weight: 600;
 }
 
-/* Back to Top Button */
+/* ==========================================================================
+   16. BACK TO TOP BUTTON
+   ========================================================================== */
+
 #back-to-top {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    background: var(--primary-gradient);
     color: white;
     border: none;
     border-radius: 50%;
@@ -546,15 +623,13 @@ footer strong {
 #back-to-top:hover {
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 8px 30px rgba(255, 107, 107, 0.6);
-    background: linear-gradient(135deg, #ff5252 0%, #d84315 100%);
+    background: var(--secondary-gradient);
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
+/* ==========================================================================
+   17. LIGHTBOX MODAL
+   ========================================================================== */
 
-/* Lightbox Modal Styles */
 .lightbox {
     display: none;
     position: fixed;
@@ -570,11 +645,6 @@ html {
     animation: fadeIn 0.3s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 .lightbox-content {
     margin: auto;
     display: block;
@@ -584,17 +654,6 @@ html {
     animation: zoomIn 0.3s ease;
     border-radius: var(--border-radius);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
 }
 
 .lightbox-caption {
@@ -608,17 +667,6 @@ html {
     font-size: 1rem;
     font-style: italic;
     animation: slideUp 0.3s ease 0.1s both;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .lightbox-close {
@@ -646,30 +694,37 @@ html {
     transform: rotate(90deg);
 }
 
-/* Add visual indicator that images are clickable */
-figure img {
-    cursor: pointer;
-    position: relative;
+/* ==========================================================================
+   18. ANIMATIONS
+   ========================================================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-figure img::after {
-    content: '🔍';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 5px 10px;
-    border-radius: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-figure:hover img::after {
-    opacity: 1;
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-/* Loading Animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -681,11 +736,10 @@ figure:hover img::after {
     }
 }
 
-article, .tool-card {
-    animation: fadeInUp 0.6s ease-out;
-}
+/* ==========================================================================
+   19. RESPONSIVE DESIGN
+   ========================================================================== */
 
-/* Responsive Design */
 @media (max-width: 968px) {
     body {
         padding: 15px;
@@ -737,7 +791,16 @@ article, .tool-card {
     }
     
     #personal-notes {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .analysis-card {
+        padding: 1.25rem;
+    }
+    
+    .meta-tag {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.7rem;
     }
 }
 
