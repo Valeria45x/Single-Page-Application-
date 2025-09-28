@@ -551,8 +551,8 @@ tbody tr:hover {
    ========================================================================== */
 
 footer {
-    background:  #e5e7eb 
-    color: #e5e7eb 
+    background:  #e5e7eb;
+    color: #e5e7eb;
     text-align: center;
     padding: 2.5rem;
     border-radius: var(--border-radius);
