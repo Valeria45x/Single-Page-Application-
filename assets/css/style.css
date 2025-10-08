@@ -176,3 +176,7 @@ footer a:hover {
         opacity: 1;
     }
 }
+/* Add to your style.css if using fixed-top */
+body {
+    padding-top: 56px; /* Height of navbar */
+}
