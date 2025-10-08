@@ -50,3 +50,28 @@ function updatePageMetadata(title, description) {
 		document.head.appendChild(metaDescription);
 	}
 }
+// assets/js/main.js
+
+// Back to Top Button Functionality
+(function() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    if (!backToTopButton) return; // Exit if button doesn't exist
+    
+    // Show button when user scrolls down 300px
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+    
+    // Smooth scroll to top when clicked
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+})();

@@ -160,3 +160,19 @@ footer a:hover {
         margin: 0;
     }
 }
+/* ===== BACK TO TOP BUTTON ===== */
+#backToTop {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+#backToTop:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
