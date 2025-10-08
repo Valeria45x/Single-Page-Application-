@@ -15,6 +15,44 @@
     --spacing-xl: 3rem;
 }
 
+/* ===== DARK MODE VARIABLES ===== */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0d1117;
+    --bs-body-color: #c9d1d9;
+    --bs-card-bg: #161b22;
+    --bs-card-border-color: #30363d;
+}
+
+[data-bs-theme="light"] {
+    --bs-body-bg: #ffffff;
+    --bs-body-color: #1e293b;
+    --bs-card-bg: #ffffff;
+    --bs-card-border-color: #e2e8f0;
+}
+
+/* ===== BASE STYLES ===== */
+/* Remove default margin and fix white space */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    flex: 1;
+}
+
 /* ===== ACCESSIBILITY ===== */
 /* Skip link for keyboard navigation */
 .skip-link {
@@ -45,37 +83,59 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* ===== LAYOUT ===== */
-/* Sticky footer layout */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1; /* Push footer to bottom */
-}
-
-/* Smooth scrolling */
+/* ===== SMOOTH SCROLLING ===== */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* Offset for sticky navbar */
 }
 
-/* ===== CUSTOM ENHANCEMENTS ===== */
-/* Header gradient (optional) */
-header {
+/* ===== DARK MODE SPECIFIC STYLES ===== */
+/* Cards in dark mode */
+[data-bs-theme="dark"] .card {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-card-border-color);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .list-group-item {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-card-border-color);
+    color: var(--bs-body-color);
+}
+
+/* Alert in dark mode */
+[data-bs-theme="dark"] .alert-info {
+    background-color: #1f3a5f;
+    border-color: #2d5a8c;
+    color: #a8c5e8;
+}
+
+[data-bs-theme="dark"] .alert-info .alert-link {
+    color: #7cb3ff;
+}
+
+/* Header gradient in dark mode */
+[data-bs-theme="dark"] header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+[data-bs-theme="light"] header {
     background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
 }
 
+/* ===== CUSTOM ENHANCEMENTS ===== */
 /* Card hover effects */
 .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* List group hover effects */
@@ -84,7 +144,7 @@ header {
 }
 
 .list-group-item:hover {
-    background-color: #f8f9fa;
+    background-color: rgba(37, 99, 235, 0.1);
     padding-left: 1.5rem;
 }
 
@@ -103,6 +163,32 @@ footer a:hover {
     opacity: 0.8;
 }
 
+/* ===== DARK MODE TOGGLE BUTTON ===== */
+#darkModeToggle {
+    transition: all 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: rotate(20deg);
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+#backToTop {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+#backToTop:hover {
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
 /* ===== UTILITIES ===== */
 /* Additional spacing helpers */
 .section-spacing {
@@ -112,6 +198,10 @@ footer a:hover {
 /* Custom text colors */
 .text-custom-primary {
     color: var(--custom-primary);
+}
+
+.text-purple {
+    color: #6f42c1;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -135,6 +225,12 @@ footer a:hover {
     .card {
         margin-bottom: 1rem;
     }
+    
+    /* Dark mode toggle button on mobile */
+    #darkModeToggle {
+        margin-top: 0.5rem;
+        margin-left: 0 !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -143,7 +239,7 @@ footer a:hover {
         font-size: 1.5rem;
     }
     
-    .display-4 {
+    .display-3 {
         font-size: 2rem;
     }
 }
@@ -152,26 +248,19 @@ footer a:hover {
 @media print {
     .skip-link,
     header,
-    footer {
+    footer,
+    #darkModeToggle,
+    #backToTop,
+    nav {
         display: none;
     }
     
     main {
         margin: 0;
     }
-}
-/* ===== BACK TO TOP BUTTON ===== */
-#backToTop {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    animation: fadeIn 0.3s ease forwards;
-}
-
-#backToTop:hover {
-    transform: translateY(-3px);
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
+    
+    body {
+        background-color: white;
+        color: black;
     }
+}
