@@ -102,14 +102,14 @@ body{margin:0;color:var(--ink);background:var(--bg);font:400 16px/1.7 Inter,ui-s
 /* ===== Tabs unificados ===== */
 .tabs{border-top:1px solid var(--line)}
 .tabs__list{
-  display:flex;gap:.5rem;flex-wrap:wrap;
-  position:sticky;top:64px;background:#fff;padding:10px 0;z-index:1;border-bottom:1px solid var(--line)
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  background:#fff;
+  padding:10px 0;
+  z-index:1;
+  border-bottom:1px solid var(--line)
 }
-.tabs__list [role="tab"]{cursor:pointer}
-.panel{display:none;padding:22px 0}
-.panel.is-active{display:block}
-.panel__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
-
 /* Títulos dentro de panel */
 .panel__content h3{margin:0 0 8px;font-weight:900}
 .panel__content h3 a{text-decoration:none}
