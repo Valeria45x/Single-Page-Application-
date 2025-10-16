@@ -1,77 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Web Design Tools Analysis — Valeria Cabrera</title>
 
-  <!-- Bootstrap CSS FIRST -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-  <!-- Your custom CSS AFTER Bootstrap -->
-  <link rel="stylesheet" href="../assets/css/resources.css">
+  <link rel="stylesheet" href="../assets/css/index.css" />
+  <link rel="stylesheet" href="../assets/css/resources.css" />
 </head>
 <body id="top">
-  <a class="skip-to-content" href="#main">Skip to content</a>
+  <a class="skip-to-content" href="#main">Saltar al contenido</a>
 
-  <div class="container py-3">
-    <header class="mb-4">
-      <h1 class="mb-2">Web Design Tools Analysis</h1>
-      <p class="mb-0">
-        <p class="text-center"></p>
+  <!-- Navbar glassy -->
+  <nav class="nav" aria-label="Primaria">
+    <div class="wrap nav__row">
+      <a href="#top" class="brand">Valeria Cabrera</a>
+      <div class="nav__links">
+        <a class="chip chip--ghost chip--outline" href="#frameworks">Frameworks</a>
+        <a class="chip chip--ghost chip--outline" href="#generators">Generators</a>
+        <a class="chip chip--ghost chip--outline" href="#ui-libraries">UI</a>
+        <a class="chip chip--ghost chip--outline" href="#animations">Animación</a>
+        <a class="chip chip--ghost chip--outline" href="#builders">Builders</a>
+        <a class="chip chip--ghost chip--outline" href="#personal-notes">Notas</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="wrap hero__inner">
+      <h1 class="hero__title grad-text">
+        Web Design Tools<br>Analysis & Reference
+      </h1>
+      <p class="hero__meta">
         Student: <strong>Valeria Cabrera</strong> · Course: <strong>Advanced Web Design</strong> · Professor: <strong>Rubén Vega Balbás</strong>
       </p>
-
-      <!-- Bootstrap nav pills mapped to your button look -->
-      <nav class="mt-4">
-        <ul class="nav justify-content-center flex-wrap gap-2">
-          <li class="nav-item"><a class="btn btn-primary shadow-custom-light" href="#frameworks">CSS Frameworks</a></li>
-          <li class="nav-item"><a class="btn btn-primary shadow-custom-light" href="#generators">Static Generators</a></li>
-          <li class="nav-item"><a class="btn btn-primary shadow-custom-light" href="#ui-libraries">UI Libraries</a></li>
-          <li class="nav-item"><a class="btn btn-primary shadow-custom-light" href="#animations">Animations</a></li>
-          <li class="nav-item"><a class="btn btn-primary shadow-custom-light" href="#builders">Page Builders</a></li>
-          <li class="nav-item"><a class="btn btn-primary shadow-custom-light" href="#personal-notes">My Analysis</a></li>
-        </ul>
+      <nav class="hero__nav" aria-label="Navegación por secciones">
+        <a href="#frameworks" class="chip chip--outline">CSS Frameworks</a>
+        <a href="#generators" class="chip chip--outline">Static Generators</a>
+        <a href="#ui-libraries" class="chip chip--outline">UI Libraries</a>
+        <a href="#animations" class="chip chip--outline">Animations</a>
+        <a href="#builders" class="chip chip--outline">Page Builders</a>
+        <a href="#personal-notes" class="chip chip--outline">My Analysis</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main id="main" class="glass-effect p-4 p-md-5 rounded-4 shadow-custom-light">
-      <!-- CSS Frameworks -->
-      <section id="frameworks" class="pb-5 mb-5 border-bottom-0">
-        <h2>CSS Frameworks</h2>
-        <p class="category-intro">
-          CSS frameworks provide pre-written CSS code that helps speed up development and ensure consistency across projects. They offer ready-made components and utility classes.
-        </p>
+  <main id="main">
+    <!-- === CSS Frameworks (tabs layout unificado) === -->
+    <section id="frameworks" class="section">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="display display--section grad-text">CSS Frameworks</h2>
+          <p class="lead">CSS frameworks provide pre-written CSS code that helps speed up development and ensure consistency across projects. They offer ready-made components and utility classes.</p>
+          <ul class="legend" aria-label="Runtime legend">
+            <li><span class="badge node">📦 Requires Node.js</span></li>
+            <li><span class="badge cdn">🌐 No Node.js</span></li>
+          </ul>
+        </header>
 
-        <!-- Bootstrap grid -->
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title">
-                  <a href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a>
-                </h3>
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="CSS Frameworks">
+            <button role="tab" aria-selected="true" aria-controls="fw-bootstrap" id="t-bootstrap" class="chip chip--tab chip--outline">Bootstrap</button>
+            <button role="tab" aria-selected="false" aria-controls="fw-tailwind"  id="t-tailwind"  class="chip chip--tab chip--outline">Tailwind</button>
+            <button role="tab" aria-selected="false" aria-controls="fw-bulma"     id="t-bulma"     class="chip chip--tab chip--outline">Bulma</button>
+          </div>
 
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge standalone">🌐 No Runtime - CDN/Download</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/bootstrap-showcase.png?updatedAt=1758535011796" alt="Bootstrap component showcase" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Bootstrap's extensive component library in action</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Quick to learn</span>
-                  <span class="meta-tag tag-type">Ready-made components</span>
-                  <span class="meta-tag tag-approach">Mobile-first design</span>
-                </div>
-
+          <!-- Bootstrap -->
+          <section id="fw-bootstrap" role="tabpanel" aria-labelledby="t-bootstrap" class="panel is-active">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a> <span class="badge cdn">🌐 No Runtime - CDN/Download</span></h3>
                 <p>The world's most popular framework. Offers a comprehensive component library with JavaScript plugins included. Perfect for rapid prototyping and consistent design.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Quick to learn</span>
+                  <span class="tag">Ready-made components</span>
+                  <span class="tag">Mobile-first design</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Extensive documentation</li>
@@ -80,7 +87,7 @@
                       <li>Browser compatibility</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Generic Bootstrap look</li>
@@ -91,35 +98,26 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/bootstrap-showcase.png?updatedAt=1758535011796" alt="Bootstrap component showcase" width="640" height="360" loading="lazy">
+                <figcaption>Bootstrap's extensive component library in action</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title">
-                  <a href="https://tailwindcss.com/" target="_blank" rel="noopener">Tailwind CSS</a>
-                </h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge nodejs">📦 Requires Node.js</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/tailwind-utilities.png?updatedAt=1758535011795" alt="Tailwind CSS utilities demonstration" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Utility-first approach for custom designs</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Requires CSS knowledge</span>
-                  <span class="meta-tag tag-type">Build from scratch</span>
-                  <span class="meta-tag tag-approach">Custom designs</span>
-                </div>
-
+          <!-- Tailwind -->
+          <section id="fw-tailwind" role="tabpanel" aria-labelledby="t-tailwind" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://tailwindcss.com/" target="_blank" rel="noopener">Tailwind CSS</a> <span class="badge node">📦 Requires Node.js</span></h3>
                 <p>A utility-first CSS framework that provides low-level utility classes to build custom designs without leaving HTML. No pre-built components, pure flexibility.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Requires CSS knowledge</span>
+                  <span class="tag">Build from scratch</span>
+                  <span class="tag">Custom designs</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Highly customizable</li>
@@ -128,7 +126,7 @@
                       <li>Consistent spacing</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Verbose HTML</li>
@@ -139,35 +137,26 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/tailwind-utilities.png?updatedAt=1758535011795" alt="Tailwind CSS utilities demonstration" width="640" height="360" loading="lazy">
+                <figcaption>Utility-first approach for custom designs</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title">
-                  <a href="https://bulma.io/" target="_blank" rel="noopener">Bulma</a>
-                </h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge standalone">🌐 No Runtime - Pure CSS</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/bulma-framework.png?updatedAt=1758535011765" alt="Bulma framework showcase" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Modern CSS framework based on Flexbox</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Easy to start</span>
-                  <span class="meta-tag tag-type">Pure CSS solution</span>
-                  <span class="meta-tag tag-approach">Modern flexbox</span>
-                </div>
-
+          <!-- Bulma -->
+          <section id="fw-bulma" role="tabpanel" aria-labelledby="t-bulma" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://bulma.io/" target="_blank" rel="noopener">Bulma</a> <span class="badge cdn">🌐 No Runtime - Pure CSS</span></h3>
                 <p>A modern CSS framework based on Flexbox. Pure CSS with no JavaScript dependencies, making it lightweight and easy to customize.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Easy to start</span>
+                  <span class="tag">Pure CSS solution</span>
+                  <span class="tag">Modern flexbox</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>No JS required</li>
@@ -176,7 +165,7 @@
                       <li>Modular imports</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>No JS components</li>
@@ -187,43 +176,43 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/bulma-framework.png?updatedAt=1758535011765" alt="Bulma framework showcase" width="640" height="360" loading="lazy">
+                <figcaption>Modern CSS framework based on Flexbox</figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Static Site Generators -->
-      <section id="generators" class="pb-5 mb-5">
-        <h2>Static Site Generators</h2>
-        <p class="category-intro">
-          Tools that generate static HTML websites from templates and content files. Perfect for performance, security, and easy deployment.
-        </p>
+    <!-- === Static Site Generators === -->
+    <section id="generators" class="section">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="display display--section grad-text">Static Site Generators</h2>
+          <p class="lead">Tools that generate static HTML websites from templates and content files. Perfect for performance, security, and easy deployment.</p>
+        </header>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a></h3>
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Static Site Generators">
+            <button role="tab" aria-selected="true"  aria-controls="gen-jekyll" id="t-jekyll" class="chip chip--tab chip--outline">Jekyll</button>
+            <button role="tab" aria-selected="false" aria-controls="gen-hugo"  id="t-hugo"  class="chip chip--tab chip--outline">Hugo</button>
+            <button role="tab" aria-selected="false" aria-controls="gen-gatsby"id="t-gatsby"class="chip chip--tab chip--outline">Gatsby</button>
+          </div>
 
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge ruby">🟥 Requires Ruby</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/jekyll-static.png?updatedAt=1758536765773" alt="Jekyll static site generator" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Transform plain text into static websites</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Technical setup needed</span>
-                  <span class="meta-tag tag-type">Static site builder</span>
-                  <span class="meta-tag tag-approach">Perfect for GitHub</span>
-                </div>
-
+          <section id="gen-jekyll" role="tabpanel" aria-labelledby="t-jekyll" class="panel is-active">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> <span class="badge ruby">🟥 Requires Ruby</span></h3>
                 <p>Transform plain text into static websites and blogs. Native support for GitHub Pages hosting makes it perfect for documentation and personal sites.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Technical setup needed</span>
+                  <span class="tag">Static site builder</span>
+                  <span class="tag">Perfect for GitHub</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>GitHub Pages integration</li>
@@ -232,7 +221,7 @@
                       <li>Free hosting</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Ruby dependency</li>
@@ -243,33 +232,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/jekyll-static.png?updatedAt=1758536765773" alt="Jekyll static site generator" width="640" height="360" loading="lazy">
+                <figcaption>Transform plain text into static websites</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge binary">🟢 Standalone Binary</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/hugo-fast.png?updatedAt=1758536765805" alt="Hugo static site generator" width="640" height="360">
-                  <figcaption class="figure-caption text-center">The world's fastest framework for building websites</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Moderate complexity</span>
-                  <span class="meta-tag tag-type">Lightning fast builds</span>
-                  <span class="meta-tag tag-approach">For large sites</span>
-                </div>
-
+          <section id="gen-hugo" role="tabpanel" aria-labelledby="t-hugo" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <span class="badge bin">🟢 Standalone Binary</span></h3>
                 <p>Written in Go with incredible build speeds. Perfect for large sites with thousands of pages that need quick regeneration.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Moderate complexity</span>
+                  <span class="tag">Lightning fast builds</span>
+                  <span class="tag">For large sites</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Lightning fast builds</li>
@@ -278,7 +259,7 @@
                       <li>Live reload</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Go templates</li>
@@ -289,33 +270,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/hugo-fast.png?updatedAt=1758536765805" alt="Hugo static site generator" width="640" height="360" loading="lazy">
+                <figcaption>The world's fastest framework for building websites</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener">Gatsby</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge nodejs">📦 Requires Node.js + React</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/gatsby-react.png?updatedAt=1758536765785" alt="Gatsby React-based generator" width="640" height="360">
-                  <figcaption class="figure-caption text-center">React-based framework for blazing-fast websites</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Steep learning curve</span>
-                  <span class="meta-tag tag-type">React framework</span>
-                  <span class="meta-tag tag-approach">Progressive web apps</span>
-                </div>
-
+          <section id="gen-gatsby" role="tabpanel" aria-labelledby="t-gatsby" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://www.gatsbyjs.com/" target="_blank" rel="noopener">Gatsby</a> <span class="badge node">📦 Requires Node.js + React</span></h3>
                 <p>A React-based framework that helps developers build blazing-fast websites with modern web technologies and progressive web app features.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Steep learning curve</span>
+                  <span class="tag">React framework</span>
+                  <span class="tag">Progressive web apps</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>React ecosystem</li>
@@ -324,7 +297,7 @@
                       <li>Image optimization</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Steep learning</li>
@@ -335,43 +308,43 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/gatsby-react.png?updatedAt=1758536765785" alt="Gatsby React-based generator" width="640" height="360" loading="lazy">
+                <figcaption>React-based framework for blazing-fast websites</figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- UI Component Libraries -->
-      <section id="ui-libraries" class="pb-5 mb-5">
-        <h2>UI Component Libraries</h2>
-        <p class="category-intro">
-          Pre-built component libraries that provide ready-to-use UI elements. Most are framework-specific and offer complete design systems.
-        </p>
+    <!-- === UI Component Libraries === -->
+    <section id="ui-libraries" class="section">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="display display--section grad-text">UI Component Libraries</h2>
+          <p class="lead">Pre-built component libraries that provide ready-to-use UI elements. Most are framework-specific and offer complete design systems.</p>
+        </header>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://mui.com/" target="_blank" rel="noopener">Material-UI</a></h3>
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="UI Libraries">
+            <button role="tab" aria-selected="true"  aria-controls="ui-mui"    id="t-mui"    class="chip chip--tab chip--outline">Material-UI</button>
+            <button role="tab" aria-selected="false" aria-controls="ui-antd"   id="t-antd"   class="chip chip--tab chip--outline">Ant Design</button>
+            <button role="tab" aria-selected="false" aria-controls="ui-chakra" id="t-chakra" class="chip chip--tab chip--outline">Chakra UI</button>
+          </div>
 
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge nodejs">📦 Requires Node.js + React</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/material-ui.png?updatedAt=1758537101143" alt="Material-UI React components" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Google's Material Design for React applications</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">React knowledge required</span>
-                  <span class="meta-tag tag-type">Complete design system</span>
-                  <span class="meta-tag tag-approach">Material Design</span>
-                </div>
-
+          <section id="ui-mui" role="tabpanel" aria-labelledby="t-mui" class="panel is-active">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://mui.com/" target="_blank" rel="noopener">Material-UI</a> <span class="badge node">📦 Requires Node.js + React</span></h3>
                 <p>React components implementing Google's Material Design. Comprehensive theming system with accessibility built-in.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">React knowledge required</span>
+                  <span class="tag">Complete design system</span>
+                  <span class="tag">Material Design</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Complete components</li>
@@ -380,7 +353,7 @@
                       <li>TypeScript support</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>React only</li>
@@ -391,33 +364,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/material-ui.png?updatedAt=1758537101143" alt="Material-UI React components" width="640" height="360" loading="lazy">
+                <figcaption>Google's Material Design for React applications</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://ant.design/" target="_blank" rel="noopener">Ant Design</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge nodejs">📦 Requires Node.js + React</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/ant-design.png?updatedAt=1758537353560" alt="Ant Design components" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Enterprise-level design language and components</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">React experience needed</span>
-                  <span class="meta-tag tag-type">Enterprise components</span>
-                  <span class="meta-tag tag-approach">Business applications</span>
-                </div>
-
+          <section id="ui-antd" role="tabpanel" aria-labelledby="t-antd" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://ant.design/" target="_blank" rel="noopener">Ant Design</a> <span class="badge node">📦 Requires Node.js + React</span></h3>
                 <p>A design language for enterprise-level products. Provides high-quality React components with excellent form handling.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">React experience needed</span>
+                  <span class="tag">Enterprise components</span>
+                  <span class="tag">Business applications</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Enterprise ready</li>
@@ -426,7 +391,7 @@
                       <li>Complete system</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Chinese docs</li>
@@ -437,33 +402,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/ant-design.png?updatedAt=1758537353560" alt="Ant Design components" width="640" height="360" loading="lazy">
+                <figcaption>Enterprise-level design language and components</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://chakra-ui.com/" target="_blank" rel="noopener">Chakra UI</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge nodejs">📦 Requires Node.js + React</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/chakra-ui.png?updatedAt=1758537565887" alt="Chakra UI components" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Simple, modular and accessible component library</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Beginner friendly</span>
-                  <span class="meta-tag tag-type">Modular components</span>
-                  <span class="meta-tag tag-approach">Accessibility first</span>
-                </div>
-
+          <section id="ui-chakra" role="tabpanel" aria-labelledby="t-chakra" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://chakra-ui.com/" target="_blank" rel="noopener">Chakra UI</a> <span class="badge node">📦 Requires Node.js + React</span></h3>
                 <p>Modular and accessible components following WAI-ARIA standards. Built-in dark mode and excellent developer experience.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Beginner friendly</span>
+                  <span class="tag">Modular components</span>
+                  <span class="tag">Accessibility first</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Accessibility first</li>
@@ -472,7 +429,7 @@
                       <li>Great DX</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>React only</li>
@@ -483,43 +440,43 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/chakra-ui.png?updatedAt=1758537565887" alt="Chakra UI components" width="640" height="360" loading="lazy">
+                <figcaption>Simple, modular and accessible component library</figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Animation Libraries -->
-      <section id="animations" class="pb-5 mb-5">
-        <h2>Animation Libraries</h2>
-        <p class="category-intro">
-          JavaScript and CSS libraries for creating smooth animations and interactive experiences on the web.
-        </p>
+    <!-- === Animation Libraries === -->
+    <section id="animations" class="section">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="display display--section grad-text">Animation Libraries</h2>
+          <p class="lead">JavaScript and CSS libraries for creating smooth animations and interactive experiences on the web.</p>
+        </header>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://greensock.com/" target="_blank" rel="noopener">GSAP</a></h3>
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Animation Libraries">
+            <button role="tab" aria-selected="true"  aria-controls="an-gsap"   id="t-gsap"   class="chip chip--tab chip--outline">GSAP</button>
+            <button role="tab" aria-selected="false" aria-controls="an-animate" id="t-animate" class="chip chip--tab chip--outline">Animate.css</button>
+            <button role="tab" aria-selected="false" aria-controls="an-motion"  id="t-motion"  class="chip chip--tab chip--outline">Framer Motion</button>
+          </div>
 
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge standalone">🌐 No Runtime - CDN/Download</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/gsap-animation.png?updatedAt=1758537826614" alt="GSAP animation library" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Professional-grade JavaScript animation library</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Steep learning curve</span>
-                  <span class="meta-tag tag-type">Animation powerhouse</span>
-                  <span class="meta-tag tag-approach">Professional results</span>
-                </div>
-
+          <section id="an-gsap" role="tabpanel" aria-labelledby="t-gsap" class="panel is-active">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://greensock.com/" target="_blank" rel="noopener">GSAP</a> <span class="badge cdn">🌐 No Runtime - CDN/Download</span></h3>
                 <p>Industry-standard animation library used by major brands. Incredible performance with timeline control and advanced effects.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Steep learning curve</span>
+                  <span class="tag">Animation powerhouse</span>
+                  <span class="tag">Professional results</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Industry standard</li>
@@ -528,7 +485,7 @@
                       <li>Plugin ecosystem</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Paid plugins</li>
@@ -539,33 +496,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/gsap-animation.png?updatedAt=1758537826614" alt="GSAP animation library" width="640" height="360" loading="lazy">
+                <figcaption>Professional-grade JavaScript animation library</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://animate.style/" target="_blank" rel="noopener">Animate.css</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge standalone">🌐 No Runtime - Pure CSS</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/animate-css.png?updatedAt=1758538100079" alt="Animate.css animations" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Just-add-water CSS animations library</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">No coding required</span>
-                  <span class="meta-tag tag-type">Pure CSS animations</span>
-                  <span class="meta-tag tag-approach">Drop-in solution</span>
-                </div>
-
+          <section id="an-animate" role="tabpanel" aria-labelledby="t-animate" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://animate.style/" target="_blank" rel="noopener">Animate.css</a> <span class="badge cdn">🌐 No Runtime - Pure CSS</span></h3>
                 <p>Cross-browser library of CSS animations. As easy as adding a class name to get professional animations.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">No coding required</span>
+                  <span class="tag">Pure CSS animations</span>
+                  <span class="tag">Drop-in solution</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>No JavaScript</li>
@@ -574,7 +523,7 @@
                       <li>Small size</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Limited control</li>
@@ -585,33 +534,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/animate-css.png?updatedAt=1758538100079" alt="Animate.css animations" width="640" height="360" loading="lazy">
+                <figcaption>Just-add-water CSS animations library</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://www.framer.com/motion/" target="_blank" rel="noopener">Framer Motion</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge nodejs">📦 Requires Node.js + React</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/framer-motion.png?updatedAt=1758538343142" alt="Framer Motion for React" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Production-ready motion library for React</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">React skills needed</span>
-                  <span class="meta-tag tag-type">Declarative animations</span>
-                  <span class="meta-tag tag-approach">Component-based</span>
-                </div>
-
+          <section id="an-motion" role="tabpanel" aria-labelledby="t-motion" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://www.framer.com/motion/" target="_blank" rel="noopener">Framer Motion</a> <span class="badge node">📦 Requires Node.js + React</span></h3>
                 <p>Declarative animations for React with gesture support and spring physics. Simple syntax with powerful capabilities.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">React skills needed</span>
+                  <span class="tag">Declarative animations</span>
+                  <span class="tag">Component-based</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>React integration</li>
@@ -620,7 +561,7 @@
                       <li>Simple API</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>React only</li>
@@ -631,43 +572,43 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/framer-motion.png?updatedAt=1758538343142" alt="Framer Motion for React" width="640" height="360" loading="lazy">
+                <figcaption>Production-ready motion library for React</figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Visual Page Builders -->
-      <section id="builders" class="pb-5 mb-5">
-        <h2>Visual Page Builders</h2>
-        <p class="category-intro">
-          No-code/low-code tools that allow visual website creation. Perfect for designers and rapid prototyping.
-        </p>
+    <!-- === Visual Page Builders === -->
+    <section id="builders" class="section">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="display display--section grad-text">Visual Page Builders</h2>
+          <p class="lead">No-code/low-code tools that allow visual website creation. Perfect for designers and rapid prototyping.</p>
+        </header>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://webflow.com/" target="_blank" rel="noopener">Webflow</a></h3>
+        <div class="tabs" data-tabs>
+          <div class="tabs__list" role="tablist" aria-label="Visual Page Builders">
+            <button role="tab" aria-selected="true"  aria-controls="pb-webflow"  id="t-webflow"  class="chip chip--tab chip--outline">Webflow</button>
+            <button role="tab" aria-selected="false" aria-controls="pb-elementor" id="t-elementor" class="chip chip--tab chip--outline">Elementor</button>
+            <button role="tab" aria-selected="false" aria-controls="pb-framer"   id="t-framer"   class="chip chip--tab chip--outline">Framer</button>
+          </div>
 
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge saas">☁️ SaaS - Cloud Platform</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/webflow-visual.png?updatedAt=1758538430304" alt="Webflow visual builder" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Professional web design tool with clean code output</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Visual learning</span>
-                  <span class="meta-tag tag-type">Professional tool</span>
-                  <span class="meta-tag tag-approach">No coding required</span>
-                </div>
-
+          <section id="pb-webflow" role="tabpanel" aria-labelledby="t-webflow" class="panel is-active">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://webflow.com/" target="_blank" rel="noopener">Webflow</a> <span class="badge saas">☁️ SaaS - Cloud Platform</span></h3>
                 <p>Visual design tool that generates clean, semantic code. Built-in CMS and hosting with advanced interactions.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Visual learning</span>
+                  <span class="tag">Professional tool</span>
+                  <span class="tag">No coding required</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Clean code</li>
@@ -676,7 +617,7 @@
                       <li>Hosting included</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Expensive</li>
@@ -687,33 +628,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/webflow-visual.png?updatedAt=1758538430304" alt="Webflow visual builder" width="640" height="360" loading="lazy">
+                <figcaption>Professional web design tool with clean code output</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://wordpress.org/plugins/elementor/" target="_blank" rel="noopener">Elementor</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge wordpress">🔌 WordPress Plugin</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/elementor-wordpress.png?updatedAt=1758538524042" alt="Elementor page builder" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Leading WordPress page builder plugin</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Easy to start</span>
-                  <span class="meta-tag tag-type">WordPress plugin</span>
-                  <span class="meta-tag tag-approach">Drag and drop</span>
-                </div>
-
+          <section id="pb-elementor" role="tabpanel" aria-labelledby="t-elementor" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://wordpress.org/plugins/elementor/" target="_blank" rel="noopener">Elementor</a> <span class="badge wp">🔌 WordPress Plugin</span></h3>
                 <p>WordPress page builder with live editing. Extensive widget library and template marketplace.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Easy to start</span>
+                  <span class="tag">WordPress plugin</span>
+                  <span class="tag">Drag and drop</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Easy to use</li>
@@ -722,7 +655,7 @@
                       <li>Large community</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>WordPress only</li>
@@ -733,33 +666,25 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/elementor-wordpress.png?updatedAt=1758538524042" alt="Elementor page builder" width="640" height="360" loading="lazy">
+                <figcaption>Leading WordPress page builder plugin</figcaption>
+              </figure>
+            </div>
+          </section>
 
-          <div class="col">
-            <article class="tool-card card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="https://www.framer.com/" target="_blank" rel="noopener">Framer</a></h3>
-
-                <div class="runtime-info mb-3">
-                  <span class="runtime-badge saas">☁️ SaaS - Cloud Platform</span>
-                </div>
-
-                <figure class="figure w-100">
-                  <img class="figure-img img-fluid rounded" src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/framer-interactive.png?updatedAt=1758538624301" alt="Framer design tool" width="640" height="360">
-                  <figcaption class="figure-caption text-center">Design and publish stunning interactive sites</figcaption>
-                </figure>
-
-                <div class="tool-meta mb-2">
-                  <span class="meta-tag tag-learning">Design background helps</span>
-                  <span class="meta-tag tag-type">Interactive design</span>
-                  <span class="meta-tag tag-approach">Component system</span>
-                </div>
-
+          <section id="pb-framer" role="tabpanel" aria-labelledby="t-framer" class="panel">
+            <div class="panel__grid">
+              <div class="panel__content">
+                <h3><a class="grad-text" href="https://www.framer.com/" target="_blank" rel="noopener">Framer</a> <span class="badge saas">☁️ SaaS - Cloud Platform</span></h3>
                 <p>Modern design tool with powerful scroll effects and interactions. Real-time collaboration and React components.</p>
-
-                <div class="pros-cons">
-                  <div class="pros">
+                <div class="tags">
+                  <span class="tag">Design background helps</span>
+                  <span class="tag">Interactive design</span>
+                  <span class="tag">Component system</span>
+                </div>
+                <div class="pc pc--two">
+                  <div>
                     <h4>Pros</h4>
                     <ul>
                       <li>Amazing effects</li>
@@ -768,7 +693,7 @@
                       <li>Modern output</li>
                     </ul>
                   </div>
-                  <div class="cons">
+                  <div>
                     <h4>Cons</h4>
                     <ul>
                       <li>Subscription</li>
@@ -779,155 +704,125 @@
                   </div>
                 </div>
               </div>
-            </article>
-          </div>
+              <figure class="panel__media">
+                <img src="https://ik.imagekit.io/Valeria45x/Single-Page-Application-/Resources%20Analysis/framer-interactive.png?updatedAt=1758538624301" alt="Framer design tool" width="640" height="360" loading="lazy">
+                <figcaption>Design and publish stunning interactive sites</figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Personal Analysis -->
-      <section id="personal-notes" class="pb-0 mb-0">
-        <h2>Personal Analysis: A UX/UI Perspective</h2>
+    <!-- === Personal Notes (glassmorphism) === -->
+    <section id="personal-notes" class="section section--notes">
+      <div class="wrap">
+        <h2 class="display display--section grad-text">Personal Analysis: A UX/UI Perspective</h2>
 
-        <div class="row g-4">
-          <div class="col-12 col-lg-6">
-            <article class="analysis-card h-100">
-              <h3>My Design Philosophy</h3>
-              <p>
-                As someone passionate about human-centered design, I've evaluated these tools through the lens 
-                of user experience. Most frameworks prioritize developer speed over user outcomes.I need tools that respect both the creator and the end user, balancing efficiency 
-                with accessibility, performance with beauty.
-              </p>
-            </article>
-          </div>
+        <div class="notes">
+          <article>
+            <h3>My Design Philosophy</h3>
+            <p>
+              As someone passionate about human-centered design, I've evaluated these tools through the lens 
+              of user experience. Most frameworks prioritize developer speed over user outcomes.I need tools that respect both the creator and the end user, balancing efficiency 
+              with accessibility, performance with beauty.
+            </p>
+          </article>
 
-          <div class="col-12 col-lg-6">
-            <article class="analysis-card h-100">
-              <h3>Real-World Application</h3>
-              <p>
-                After testing these tools, only a few align with modern UX principles. <strong>Tailwind CSS</strong> 
-                offers the flexibility to craft unique experiences without imposing design opinions. <strong>Jekyll</strong> 
-                creates fast, accessible sites that respect user bandwidth. Everything else feels either too rigid 
-                (Bootstrap's generic patterns) or too complex (React frameworks for simple portfolios).
-              </p>
-            </article>
-          </div>
+          <article>
+            <h3>Real-World Application</h3>
+            <p>
+              After testing these tools, only a few align with modern UX principles. <strong>Tailwind CSS</strong> 
+              offers the flexibility to craft unique experiences without imposing design opinions. <strong>Jekyll</strong> 
+              creates fast, accessible sites that respect user bandwidth. Everything else feels either too rigid 
+              (Bootstrap's generic patterns) or too complex (React frameworks for simple portfolios).
+            </p>
+          </article>
 
-          <div class="col-12 col-lg-6">
-            <article class="analysis-card h-100">
-              <h3>The Human Factor</h3>
-              <p>
-                Visual 
-                builders like Webflow seem appealing but often produce bloated, inaccessible code that fails 
-                users with slower connections or assistive technologies. As a future UX professional, I prioritize 
-                tools that enhance rather than hinder the human experience.
-              </p>
-            </article>
-          </div>
+          <article>
+            <h3>The Human Factor</h3>
+            <p>
+              Visual 
+              builders like Webflow seem appealing but often produce bloated, inaccessible code that fails 
+              users with slower connections or assistive technologies. As a future UX professional, I prioritize 
+              tools that enhance rather than hinder the human experience.
+            </p>
+          </article>
 
-          <div class="col-12 col-lg-6">
-            <article class="analysis-card h-100">
-              <h3>My Technical Stack</h3>
-              <p>
-                <strong>Current Focus:</strong> HTML/CSS fundamentals with semantic markup<br>
-                <strong>Next Step:</strong> Tailwind for rapid, accessible prototyping<br>
-                <strong>For Content:</strong> Markdown with Jekyll for maintainability<br>
-                <strong>Why This Matters:</strong> This stack delivers fast, accessible experiences while 
-                maintaining the creative freedom essential for UX innovation.
-              </p>
-            </article>
-          </div>
+          <article>
+            <h3>My Technical Stack</h3>
+            <p>
+              <strong>Current Focus:</strong> HTML/CSS fundamentals with semantic markup<br>
+              <strong>Next Step:</strong> Tailwind for rapid, accessible prototyping<br>
+              <strong>For Content:</strong> Markdown with Jekyll for maintainability<br>
+              <strong>Why This Matters:</strong> This stack delivers fast, accessible experiences while 
+              maintaining the creative freedom essential for UX innovation.
+            </p>
+          </article>
 
-          <div class="col-12 col-lg-6">
-            <article class="analysis-card h-100">
-              <h3>Industry Insights</h3>
-              <p>
-                The UX/UI industry increasingly values performance and accessibility over visual complexity. 
-                Users expect instant load times and seamless interactions. Heavy frameworks that prioritize 
-                developer convenience over user experience are becoming obsolete. The future belongs to 
-                lightweight, purposeful design, exactly what a Jekyll + Tailwind approach delivers.
-              </p>
-            </article>
-          </div>
+          <article>
+            <h3>Industry Insights</h3>
+            <p>
+              The UX/UI industry increasingly values performance and accessibility over visual complexity. 
+              Users expect instant load times and seamless interactions. Heavy frameworks that prioritize 
+              developer convenience over user experience are becoming obsolete. The future belongs to 
+              lightweight, purposeful design, exactly what a Jekyll + Tailwind approach delivers.
+            </p>
+          </article>
 
-          <div class="col-12 col-lg-6">
-            <article class="analysis-card h-100">
-              <h3>Learning Through Practice</h3>
-              <p>
-                This analysis taught me that popular doesn't mean appropriate.
-                It gave me a solid foundation to make informed decisions based on project needs rather 
-                than following trends blindly. I'm excited to continue exploring these tools and discovering
-                how each can contribute to creating better digital experiences.
-              </p>
-            </article>
-          </div>
+          <article>
+            <h3>Learning Through Practice</h3>
+            <p>
+              This analysis taught me that popular doesn't mean appropriate.
+              It gave me a solid foundation to make informed decisions based on project needs rather 
+              than following trends blindly. I'm excited to continue exploring these tools and discovering
+              how each can contribute to creating better digital experiences.
+            </p>
+          </article>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer class="mt-4">
+  <footer class="footer">
+    <div class="wrap">
       <p>© 2025 — Web Atelier UDIT · All external links belong to their respective owners.</p>
       <p>Created by <strong>Valeria Cabrera</strong> for Advanced Web Design Course</p>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
-  <!-- Back to Top Button -->
-  <a href="#top" id="back-to-top" aria-label="Back to top" class="btn btn-primary rounded-circle">↑</a>
-
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <img class="lightbox-content" id="lightbox-img" alt="">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-  </div>
-
-  <!-- Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <a href="#top" id="back-to-top" aria-label="Volver arriba" class="to-top">↑</a>
 
   <script>
-    // Back to Top Button functionality
-    const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
+    // Navbar
+    const nav = document.querySelector('.nav');
+    const setNav = () => nav && nav.classList.toggle('is-scrolled', window.scrollY > 4);
+    setNav(); window.addEventListener('scroll', setNav, {passive:true});
+
+    // Tabs
+    document.querySelectorAll('[data-tabs]').forEach(group=>{
+      const tabs   = group.querySelectorAll('[role="tab"]');
+      const panels = group.querySelectorAll('[role="tabpanel"]');
+      function activate(idx){
+        tabs.forEach((t,i)=>{
+          const sel = i===idx;
+          t.setAttribute('aria-selected', String(sel));
+          t.classList.toggle('is-active', sel);
+          t.tabIndex = sel ? 0 : -1;
+        });
+        panels.forEach((p,i)=> p.classList.toggle('is-active', i===idx));
       }
+      tabs.forEach((t,i)=> t.addEventListener('click', ()=>activate(i)));
+      tabs.forEach((t,i)=> t.addEventListener('keydown', (e)=>{
+        if(e.key==='ArrowRight'){ e.preventDefault(); activate((i+1)%tabs.length); tabs[(i+1)%tabs.length].focus(); }
+        if(e.key==='ArrowLeft'){  e.preventDefault(); activate((i-1+tabs.length)%tabs.length); tabs[(i-1+tabs.length)%tabs.length].focus(); }
+      }));
     });
 
-    // Lightbox functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const lightboxClose = document.querySelector('.lightbox-close');
-
-    document.querySelectorAll('figure img').forEach(img => {
-      img.style.cursor = 'pointer';
-      img.addEventListener('click', function () {
-        lightbox.style.display = 'block';
-        let fullSizeUrl = this.src;
-        if (fullSizeUrl.includes('ik.imagekit.io')) {
-          fullSizeUrl = fullSizeUrl.replace(/\/tr:[^\/]*/, '');
-          fullSizeUrl = fullSizeUrl.replace('ik.imagekit.io/Valeria45x', 'ik.imagekit.io/Valeria45x/tr:w-1200');
-        }
-        lightboxImg.src = fullSizeUrl;
-        lightboxCaption.textContent = this.alt;
-      });
-    });
-
-    lightboxClose.addEventListener('click', function () {
-      lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && lightbox.style.display === 'block') {
-        lightbox.style.display = 'none';
-      }
+    // To top
+    const toTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', ()=> {
+      if (window.scrollY > 300) toTop.classList.add('show'); else toTop.classList.remove('show');
     });
   </script>
 </body>
