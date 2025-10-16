@@ -101,12 +101,14 @@ body{margin:0;color:var(--ink);background:var(--bg);font:400 16px/1.7 Inter,ui-s
 
 /* ===== Tabs unificados ===== */
 .tabs{border-top:1px solid var(--line)}
-/* ===== Tabs unificados ===== */
-.tabs{border-top:1px solid var(--line)}
 .tabs__list{
-  display:flex;gap:.5rem;flex-wrap:wrap;
-  /* REMOVIDO: position:sticky;top:64px; */
-  background:#fff;padding:10px 0;z-index:1;border-bottom:1px solid var(--line)
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  background:#fff;
+  padding:10px 0;
+  z-index:1;
+  border-bottom:1px solid var(--line)
 }
 .panel{display:none;padding:22px 0}
 .panel.is-active{display:block}
@@ -176,7 +178,7 @@ body{margin:0;color:var(--ink);background:var(--bg);font:400 16px/1.7 Inter,ui-s
 
 /* ===== HAMBURGER MENU ===== */
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -207,79 +209,90 @@ body{margin:0;color:var(--ink);background:var(--bg);font:400 16px/1.7 Inter,ui-s
   transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* DESKTOP - Mostrar menú normal */
-@media (min-width: 769px) {
-  .nav__links {
-    display: flex !important;
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    background: transparent !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-  }
+/* Menú lateral con GLASSMORPHISM mejorado */
+.nav__links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(25px);
+  -webkit-backdrop-filter: saturate(180%) blur(25px);
+  padding: 80px 20px 20px;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -10px 0 50px rgba(90, 161, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 1);
+  z-index: 1000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* MOBILE - Hamburger Menu */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-  
-  .nav__links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: saturate(160%) blur(20px);
-    padding: 80px 20px 20px;
-    transition: right 0.3s ease-in-out;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  
-  .nav__links.show {
-    right: 0;
-  }
-  
-  .nav__links .chip {
-    width: 100%;
-    text-align: left;
-    padding: 15px 20px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    border: 1px solid var(--line);
-  }
-  
-  .nav__links .chip:hover {
-    background: linear-gradient(90deg, var(--grad-from), var(--grad-to));
-    color: #fff;
-    transform: translateX(5px);
-  }
-  
-  .nav__links::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-  }
-  
-  .nav__links.show::before {
-    opacity: 1;
-    visibility: visible;
-  }
+.nav__links.show {
+  right: 0;
+}
+
+/* Los chips dentro del menú deben verse IGUAL que en la página */
+.nav__links .chip {
+  --pad-x: 1rem;
+  --pad-y: .55rem;
+  display: inline-block;
+  padding: var(--pad-y) var(--pad-x);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: .2s ease;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+
+/* Efecto outline degradado igual que en la página */
+.nav__links .chip--outline {
+  position: relative;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(90deg, var(--grad-from), var(--grad-to));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Hover igual que en la página */
+.nav__links .chip:hover,
+.nav__links .chip:focus-visible {
+  color: #fff;
+  background: linear-gradient(90deg, var(--grad-from), var(--grad-to));
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(77, 109, 255, .25);
+  transform: translateY(-2px);
+}
+
+/* Overlay con blur */
+.nav__links::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.nav__links.show::before {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
