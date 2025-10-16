@@ -20,17 +20,20 @@
 		<a href="#main" class="skip-link">Skip to main content</a>
 
 		<!-- Sticky Navigation Bar with Dark Mode Toggle -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+		<nav class="navbar navbar-dark bg-dark sticky-top shadow">
 			<div class="container">
 				<a class="navbar-brand fw-bold" href="#">
 					<i class="bi bi-code-slash"></i> Valeria Cabrera
 				</a>
 				
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-					<span class="navbar-toggler-icon"></span>
+				<!-- Hamburger Button -->
+				<button class="hamburger" type="button" aria-label="Toggle navigation" id="hamburgerBtn">
+					<span></span>
+					<span></span>
+					<span></span>
 				</button>
 				
-				<div class="collapse navbar-collapse" id="navbarNav">
+				<div class="navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
 							<a class="nav-link active" href="#main">Home</a>
@@ -43,6 +46,11 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#progress">Progress</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="resouces\index.html">
+								<i class="bi bi-file-code"></i> Exercise
+							</a>
 						</li>
 						<!-- Dark Mode Toggle -->
 						<li class="nav-item">
@@ -202,6 +210,24 @@
 				</div>
 			</section>
 
+			<!-- NUEVA SECCIÓN: Enlace destacado al ejercicio -->
+			<section class="mb-5">
+				<h2 class="mb-4">My Exercises</h2>
+				<div class="card border-success">
+					<div class="card-body text-center p-4">
+						<i class="bi bi-file-code display-1 text-success mb-3"></i>
+						<h5 class="card-title fw-semibold">Check out my exercise</h5>
+						<p class="card-text text-muted mb-4">
+							View the practice exercise I've completed for this course.
+						</p>
+						<a href="resouces\index.html" class="btn btn-success btn-lg">
+							<i class="bi bi-arrow-right-circle me-2"></i>
+							View Exercise
+						</a>
+					</div>
+				</div>
+			</section>
+
 		</main>
 
 		<!-- Footer -->
@@ -241,5 +267,41 @@
 		
 		<!-- Your custom JS -->
 		<script src="assets/js/main.js"></script>
+		
+		<!-- Hamburger Menu Script -->
+		<script>
+			const hamburgerBtn = document.getElementById('hamburgerBtn');
+			const navbarCollapse = document.getElementById('navbarNav');
+			const navLinks = document.querySelectorAll('.nav-link');
+			const body = document.body;
+			
+			if (hamburgerBtn && navbarCollapse) {
+				// Toggle menu
+				hamburgerBtn.addEventListener('click', function(e) {
+					e.stopPropagation();
+					this.classList.toggle('active');
+					navbarCollapse.classList.toggle('show');
+					body.style.overflow = navbarCollapse.classList.contains('show') ? 'hidden' : '';
+				});
+				
+				// Close menu when clicking on a link
+				navLinks.forEach(link => {
+					link.addEventListener('click', () => {
+						hamburgerBtn.classList.remove('active');
+						navbarCollapse.classList.remove('show');
+						body.style.overflow = '';
+					});
+				});
+				
+				// Close menu when clicking on overlay
+				navbarCollapse.addEventListener('click', (e) => {
+					if (e.target === navbarCollapse) {
+						hamburgerBtn.classList.remove('active');
+						navbarCollapse.classList.remove('show');
+						body.style.overflow = '';
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
