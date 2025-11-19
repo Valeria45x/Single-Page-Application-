@@ -37,6 +37,35 @@
   --bs-card-border-color:#e9edf3;
 }
 
+/* ===== ANIMATIONS ===== */
+
+/* Keyframes for fade-in slide-up */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to the main title */
+header h1 {
+  animation: fadeInSlideUp 1s ease-out;
+  animation-fill-mode: both;
+  font-weight:900;
+  letter-spacing:-.02em;
+}
+
+/* Delay the subtitle animation slightly for a staggered effect */
+header .lead {
+  animation: fadeInSlideUp 1s ease-out 0.3s;
+  animation-fill-mode: both;
+  opacity: 0; /* Start invisible, animation will fade it in */
+}
+
 /* Base */
 *{margin:0;padding:0;box-sizing:border-box}
 *{transition-property:background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:150ms}
@@ -67,7 +96,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--grad-to);outline-of
 
 /* Header */
 header{background:linear-gradient(135deg,var(--grad-from) 0%,var(--grad-to) 100%)!important;padding:64px 0 48px!important}
-header h1{font-weight:900;letter-spacing:-.02em}
 
 /* Headings gradient */
 h2,h3{font-weight:900;letter-spacing:-.02em;background:linear-gradient(90deg,var(--grad-from),var(--grad-to));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
